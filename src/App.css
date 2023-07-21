@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  color: #333;
+  /* background-color: #efefef; */
+  font-family: 'open sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input, textarea {
+  display: block;
+  padding: 0;
+  border: 1px solid #d9d8d8;
+  width: 600px;
+  max-width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-family: inherit;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+textarea {
+  height: 200px;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 678px) {
+  .main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+}
+
+.header .title {
+  padding: 0 40px 20px;
+  border-bottom: 1px solid #d9d8d8;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: 1px solid #d9d8d8;
+}
+
+.sidebar-item {
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.title-input, .body-input {
+  margin-bottom: 5px;
+}
+
+.input-error {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #b12d18;
+}
+
+.add-note {
+  width: 120px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background-color: #125ed1;
+  color: #fff;
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.note {
+  background: #ffefa6;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.note-title {
+  margin: 0 0 10px;
+  font-size: 1.125rem;
+}
+
+.note-body {
+  margin: 0;
+}
+
+.note .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.note-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+}
+
+.note-check {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 0;
+}
+
+.note-check + label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* checked state */
+.note.checked .note-title,
+.note.checked .note-body {
+  text-decoration: line-through;
+}
+
+.note .delete {
+  cursor: pointer;
+}
