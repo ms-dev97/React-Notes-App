@@ -24,6 +24,14 @@ function NoteList() {
 
         }
 
+        notesDB.addEventListener('upgradeneeded', (e) => {
+            const thisDB = e.target.result;
+        
+            if (!thisDB.objectStoreNames.contains('notes')) {
+                thisDB.createObjectStore('notes', {autoIncrement: true});
+            }
+        });
+
         notesDB.addEventListener('success', fetchData);
 
         return () => notesDB.removeEventListener('success', fetchData);
